@@ -38,6 +38,9 @@ class App extends Component {
       }
     ]
   }
+  changeHandler(expenditure) {
+    console.log(expenditure)
+  }
   render() {
     return (
       <div className="App">
@@ -46,7 +49,8 @@ class App extends Component {
             expenditures={this.state.expenditures}
           />
           <SpendLess
-
+            expenditures={this.state.expenditures}
+            onChangeHandler={this.changeHandler}
           />
       </div>
     );
