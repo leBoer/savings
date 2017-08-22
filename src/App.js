@@ -1,18 +1,49 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import IncomeSpend from './IncomeSpend'
 import './App.css';
 
 class App extends Component {
+  state = {
+    "incomes": [
+      {
+        "amount": 45300,
+        "from_age": 30,
+        "to_age": 67,
+        "frequency": "annual",
+        "name": "Annual salary"
+      }
+    ],
+    "expenditures": [
+      {
+        "amount": 1199,
+        "from_age": 30,
+        "to_age": 65,
+        "frequency": "monthly",
+        "name": "Mortgage"
+      },
+      {
+        "amount": 1199,
+        "from_age": 30,
+        "to_age": 65,
+        "frequency": "monthly",
+        "name": "Bills"
+      },
+      {
+        "amount": 1199,
+        "from_age": 30,
+        "to_age": 65,
+        "frequency": "monthly",
+        "name": "General spending"
+      }
+    ]
+  }
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+          <IncomeSpend
+            incomes={this.state.incomes}
+            expenditures={this.state.expenditures}
+          />
       </div>
     );
   }
