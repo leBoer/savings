@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import IncomeSpend from './IncomeSpend'
+import SpendLess from './SpendLess'
 import './App.css';
 
 class App extends Component {
@@ -43,6 +44,9 @@ class App extends Component {
           <IncomeSpend
             incomes={this.state.incomes}
             expenditures={this.state.expenditures}
+          />
+          <SpendLess
+
           />
       </div>
     );
