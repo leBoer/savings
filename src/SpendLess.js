@@ -31,8 +31,8 @@ class Slider extends Component {
         <div className="slider">
           <input
             type="range"
-            min="0"
-            max="2000"
+            min={0}
+            max={2000}
             id={expenditure.name}
             value={expenditure.amount}
             onChange={onChangeHandler}
