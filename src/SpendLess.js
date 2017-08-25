@@ -33,6 +33,7 @@ class Slider extends Component {
             type="range"
             min="0"
             max="2000"
+            id={expenditure.name}
             value={expenditure.amount}
             onChange={onChangeHandler}
           />

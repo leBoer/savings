@@ -38,9 +38,17 @@ class App extends Component {
       }
     ]
   }
-  changeHandler(expenditure) {
-    console.log(expenditure)
+
+  changeHandler = (event) => {
+    const expenditures = this.state.expenditures
+    const indexOfExpenditure = expenditures.findIndex(i => i.name === event.target.id)
+    expenditures[indexOfExpenditure].amount = event.target.value
+    this.setState((state) => ({
+      expenditures
+    }))
+
   }
+
   render() {
     return (
       <div className="App">
