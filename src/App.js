@@ -42,14 +42,20 @@ class App extends Component {
 
   changeHandler = (event) => {
     const expenditures = this.state.expenditures
+    const incomes = this.state.incomes
+    let savings = this.state.savings
+
     const indexOfExpenditure = expenditures.findIndex(i => i.name === event.target.id)
     expenditures[indexOfExpenditure].amount = parseInt(event.target.value, 10)
-    let tot = 0
+    let totExp = 0
+    let totInc = 0
     for (const expenditure of expenditures) {
-      tot += expenditure.amount
+      totExp += expenditure.amount
     }
-    let savings = this.state.savings
-    savings = tot
+    for (const income of incomes) {
+      totInc += income.amount // This is in case we expand to other sources of income
+    }
+    savings = (totInc / 12) - totExp
     
     this.setState((state) => ({
       expenditures,
@@ -67,6 +73,7 @@ class App extends Component {
           />
           <SpendLess
             expenditures={this.state.expenditures}
+            savings ={this.state.savings}
             onChangeHandler={this.changeHandler}
           />
       </div>

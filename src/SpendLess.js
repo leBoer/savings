@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class SpendLess extends Component {
   render(){
-    const { expenditures, onChangeHandler } = this.props
+    const { expenditures, onChangeHandler, savings } = this.props
     return(
       <div className="spend_less">
         <h1>SPEND LESS</h1>
@@ -14,7 +14,7 @@ class SpendLess extends Component {
             onChangeHandler={onChangeHandler}
           />
         ))}
-        <div className="slider_name"></div>
+        <strong>This means you're saving £{savings} per month</strong>
       </div>
     )
   }
