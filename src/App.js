@@ -39,14 +39,17 @@ class App extends Component {
     ],
     "savings": 0
   }
+  componentDidMount(){
 
-  changeHandler = (event) => {
+  }
+
+  changeHandler = (e, id) => {
     const expenditures = this.state.expenditures
     const incomes = this.state.incomes
     let savings = this.state.savings
 
-    const indexOfExpenditure = expenditures.findIndex(i => i.name === event.target.id)
-    expenditures[indexOfExpenditure].amount = parseInt(event.target.value, 10)
+    const indexOfExpenditure = expenditures.findIndex(i => i.name === id)
+    expenditures[indexOfExpenditure].amount = parseInt(e, 10)
     let totExp = 0
     let totInc = 0
     for (const expenditure of expenditures) {
@@ -61,6 +64,9 @@ class App extends Component {
       expenditures,
       savings
     }))
+  }
+  changeCompleteHandler = (event) => {
+    console.log('test')
 
   }
 
@@ -75,6 +81,7 @@ class App extends Component {
             expenditures={this.state.expenditures}
             savings ={this.state.savings}
             onChangeHandler={this.changeHandler}
+            onChangeCompleteHandler={this.changeCompleteHandler}
           />
       </div>
     );

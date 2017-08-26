@@ -22,7 +22,6 @@ class IncomeSpend extends Component {
 class Input extends Component {
 
   handleChange(event) {
-    console.log(event)
   }
 
   render() {
