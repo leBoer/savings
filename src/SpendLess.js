@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Slider from 'react-rangeslider'
 import 'react-rangeslider/lib/index.css'
+import { TiThumbsUp, TiThumbsDown } from 'react-icons/lib/ti';
 
 class SpendLess extends Component {
   render(){
@@ -18,6 +19,7 @@ class SpendLess extends Component {
           />
         ))}
         <strong>This means you're saving £{savings} per month</strong>
+        <Tips />
       </div>
     )
   }
@@ -36,7 +38,6 @@ class Adjustment extends Component {
           <Slider
             min={0}
             max={2000}
-            key={expenditure.name}
             value={expenditure.amount}
             onChange={(e) => onChangeHandler(e, id)}
             onChangeComplete={onChangeCompleteHandler}
@@ -44,6 +45,60 @@ class Adjustment extends Component {
         </div>
       </div>
     )
+  }
+}
+
+class Tips extends Component {
+  learnMore(){
+    window.open('https://en.wikipedia.org/wiki/The_Richest_Man_in_Babylon_(book)', '_blank')
+  }
+  thumbsUp() {
+    console.log('We are glad you enjoyed that')
+    alert('We are glad you found this helpful')
+  }
+  render(){
+    return(
+      <div className="tips">
+        <button onClick={this.learnMore}>
+          Find ways to save
+        </button>
+        <Thumbs />
+      </div>
+    )
+  }
+}
+
+class Thumbs extends Component {
+  state = {
+    showMe: false
+  }
+  
+  onClick = () => {
+    this.setState(() => ({
+      showMe: true
+    }))
+  }
+
+  render() {
+    if(this.state.showMe) {
+      return(
+        <div className="feedback">
+          <p>Thank you for your feedback</p>
+        </div>
+      )
+    } else {
+      return(
+        <div className="feedback">
+          <p>Was this helpful?</p>
+          <TiThumbsUp
+            onClick={this.onClick}
+          />
+          <TiThumbsDown
+            onClick={this.onClick}
+          />
+        </div>
+      )
+    }
   }
 }
 
