@@ -40,7 +40,17 @@ class App extends Component {
     "savings": 0
   }
   componentDidMount(){
-
+    const local = JSON.parse(localStorage.getItem('budget'))
+    if(local) {
+      const expenditures = local.expenditures
+      const savings = local.savings
+      this.setState((state) => ({
+        expenditures,
+        savings
+      }))
+    } else {
+      this.manageSavings()
+    }
   }
 
   changeHandler = (e, id) => {
@@ -66,8 +76,27 @@ class App extends Component {
     }))
   }
   changeCompleteHandler = (event) => {
-    console.log('test')
-
+    // Only saves to LocalStorage when user is done moving the slider
+    console.log('Saving to LocalStorage')
+    localStorage.setItem('budget', JSON.stringify(this.state))
+  }
+  
+  manageSavings(){
+    const expenditures = this.state.expenditures
+    const incomes = this.state.incomes
+    let savings = this.state.savings
+    let totExp = 0
+    let totInc = 0
+    for (const expenditure of expenditures) {
+      totExp += expenditure.amount
+    }
+    for (const income of incomes) {
+      totInc += income.amount // This is in case we expand to other sources of income
+    }
+    savings = (totInc / 12) - totExp
+    this.setState((state) => ({
+      savings
+    }))
   }
 
   render() {
