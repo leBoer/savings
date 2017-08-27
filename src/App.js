@@ -88,16 +88,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <IncomeSpend
-            incomes={this.state.incomes}
-            expenditures={this.state.expenditures}
-          />
-          <SpendLess
-            expenditures={this.state.expenditures}
-            savings ={this.state.savings}
-            onChangeHandler={this.changeHandler}
-            onChangeCompleteHandler={this.changeCompleteHandler}
-          />
+        <IncomeSpend
+          incomes={this.state.incomes}
+          expenditures={this.state.expenditures}
+        />
+        <SpendLess
+          expenditures={this.state.expenditures}
+          savings={this.state.savings}
+          onChangeHandler={this.changeHandler}
+          onChangeCompleteHandler={this.changeCompleteHandler}
+        />
       </div>
     );
   }

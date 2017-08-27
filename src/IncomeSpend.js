@@ -4,16 +4,24 @@ class IncomeSpend extends Component {
   render() {
     const { incomes, expenditures } = this.props
     return (
-      <div className="incomeSpend">
-        <h1>YOUR INCOME & SPEND</h1>
-        <h2>Annual Income</h2>
-        {incomes.map((income) => (
-          <Input key={income.name} value={income} />
-        ))}
-        <h2>Monthly Spending</h2>
-        {expenditures.map((expenditure) => (
-          <Input key={expenditure.name} value={expenditure} />
-        ))}
+      <div className="card">
+        <div className="incomeSpend">
+          <div className="header">
+            <h2>YOUR INCOME & SPEND</h2>
+          </div>
+          <div className="income">
+            <h3>Annual Income</h3>
+            {incomes.map((income) => (
+              <Input key={income.name} value={income} />
+            ))}
+          </div>
+          <div className="expenditure">
+            <h3>Monthly Spending</h3>
+            {expenditures.map((expenditure) => (
+              <Input key={expenditure.name} value={expenditure} />
+            ))}
+          </div>
+        </div>
       </div>
     )
   }
@@ -29,30 +37,36 @@ class Input extends Component {
     return(
       <div className="input">
         <form>
-          <label>
-            {value.name}:
+          <div className="amount-block">
+            <label>
+              {value.name}:
+            </label>
             <input
-              type="number"
-              value={value.amount}
+              type="string"
+              value={'£' + value.amount}
               onChange={this.handleChange}
             />
-          </label>
-          <label>
-            From age:
+          </div>
+          <div className="age-block">
+            <label>
+              From age:
+            </label>
             <input
               type="number"
               value={value.from_age}
               onChange={this.handleChange}
             />
-          </label>
-          <label>
-            To age:
+          </div>
+          <div className="age-block">
+            <label>
+              To age:
+            </label>
             <input
-              type="number"
-              value={value.to_age}
-              onChange={this.handleChange}
-            />
-          </label>
+                type="number"
+                value={value.to_age}
+                onChange={this.handleChange}
+              />
+          </div>
         </form>
       </div>
     )

@@ -2,23 +2,139 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+* {
+  color: #548c9b;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+h2 {
+  margin: 0;
+  padding-top: 3px;
   color: white;
 }
 
-.App-intro {
-  font-size: large;
+h3 {
+  color: #225769;
+  text-align: left;
+  margin-left: 25px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+p {
+  color: #548c9b;
+}
+
+b {
+  color: #225769;
+}
+button {
+  background-color: white;
+  color: #6ab902;
+  border: 2px solid #6ab902;
+  border-radius: 8px;
+  width: 200px;
+  height: 40px;
+}
+
+input {
+  border: 1px solid #225769;
+  border-radius: 5px;
+  padding-left: 5px;
+}
+
+
+.card {
+  float: left;
+  border: 1px solid #225769;
+  width: 360px;
+  height: 400px;
+  margin: 20px;
+  box-shadow: 3px 3px 1px #888888;
+}
+
+.header {
+  background-color: #225769;
+  height: 40px;
+  text-align: center;
+}
+
+.input {
+  font-size: 0.8em;
+  height: 30px;
+  margin-bottom: 25px;
+  margin-left: 20px;
+}
+
+.expenditure {
+  width: 100%;
+  height: 50px;
+  display: inline-block;
+}
+
+.expenditure-label {
+  width: 40%;
+  height: 100%;
+  float: left;
+}
+
+.expenditure-name {
+  position: relative;
+  top: 30%;
+  text-align: left;
+  margin-left: 6px;
+}
+
+.slider {
+  width: 55%;
+  float: right;
+  margin-right: 7px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+.tips {
+  margin-top: 10px;
+}
+
+.feedback {
+  height: 55px;
+}
+
+.thumbs {
+  float: right;
+  height: 100%;
+  width: 30%;
+  align-content: center;
+}
+.question {
+  float: left;
+  height: 100%;
+  width: 65%;
+  text-align: right;
+}
+
+.amount-block {
+  float: left;
+  display: block;
+  text-align: left;
+  width: 32%;
+  margin-left: 6px;
+  /* padding-right: 4px; */
+}
+
+.age-block {
+  float: left;
+  display: block;
+  text-align: left;
+  width: 20%;
+  margin-left: 7%;
+}
+
+.amount-block input {
+  height: 30px;
+  width: 100%;
+}
+
+.age-block input {
+  height: 30px;
+  width: 100%;
 }
