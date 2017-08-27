@@ -50,6 +50,9 @@ class Adjustment extends Component {
             onChangeComplete={onChangeCompleteHandler}
           />
         </div>
+        <div className="expenditure-amount">
+          <p>£{expenditure.amount}</p>
+        </div>
       </div>
     )
   }

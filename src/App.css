@@ -83,13 +83,19 @@ input {
 }
 
 .slider {
-  width: 55%;
-  float: right;
-  margin-right: 7px;
+  width: 42%;
+  float: left;
+  /* margin-right: 2px; */
   margin-top: 0;
   margin-bottom: 0;
 }
 
+.expenditure-amount {
+  width: 10%;
+  float: right;
+  margin-right: 17px;
+  margin-left: 0;
+}
 
 .tips {
   margin-top: 10px;
