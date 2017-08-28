@@ -42,9 +42,11 @@ class App extends Component {
   componentDidMount(){
     const local = JSON.parse(localStorage.getItem('budget'))
     if(local) {
+      const incomes = local.incomes
       const expenditures = local.expenditures
       const savings = local.savings
       this.setState((state) => ({
+        incomes,
         expenditures,
         savings
       }))
@@ -53,7 +55,7 @@ class App extends Component {
     }
   }
 
-  changeHandler = (e, id) => {
+  slideChangeHandler = (e, id) => {
     const expenditures = this.state.expenditures
     const indexOfExpenditure = expenditures.findIndex(i => i.name === id)
     expenditures[indexOfExpenditure].amount = parseInt(e, 10)
@@ -95,7 +97,7 @@ class App extends Component {
         <SpendLess
           expenditures={this.state.expenditures}
           savings={this.state.savings}
-          onChangeHandler={this.changeHandler}
+          onChangeHandler={this.slideChangeHandler}
           onChangeCompleteHandler={this.changeCompleteHandler}
         />
       </div>

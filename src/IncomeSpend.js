@@ -12,13 +12,19 @@ class IncomeSpend extends Component {
           <div className="income">
             <h3>Annual Income</h3>
             {incomes.map((income) => (
-              <Input key={income.name} value={income} />
+              <Input
+                key={income.name}
+                value={income}
+              />
             ))}
           </div>
           <div className="expenditure">
             <h3>Monthly Spending</h3>
             {expenditures.map((expenditure) => (
-              <Input key={expenditure.name} value={expenditure} />
+              <Input
+                key={expenditure.name}
+                value={expenditure}
+              />
             ))}
           </div>
         </div>
@@ -28,10 +34,6 @@ class IncomeSpend extends Component {
 }
 
 class Input extends Component {
-
-  handleChange(event) {
-  }
-
   render() {
     const { value } = this.props
     return(
@@ -43,8 +45,9 @@ class Input extends Component {
             </label>
             <input
               type="string"
+              name="amount"
               value={'£' + value.amount}
-              onChange={this.handleChange}
+              readOnly
             />
           </div>
           <div className="age-block">
@@ -53,8 +56,9 @@ class Input extends Component {
             </label>
             <input
               type="number"
+              name="from_age"
               value={value.from_age}
-              onChange={this.handleChange}
+              readOnly
             />
           </div>
           <div className="age-block">
@@ -63,8 +67,9 @@ class Input extends Component {
             </label>
             <input
                 type="number"
+                name="to_age"
                 value={value.to_age}
-                onChange={this.handleChange}
+                readOnly
               />
           </div>
         </form>
